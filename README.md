@@ -8,6 +8,11 @@
 - サンプルプログラムは以下のものを使用
   - https://github.com/devkitPro/gba-examples
 
+開発者が使用しているPCのOSはUbuntu 20.04であるが、</br> 
+Windows の場合でも Docker desktop for Windows で Dockerをインストールすれば </br>
+GBA開発環境を構築することができる  
+
+
 ## Tutorial ##
 1. リポジトリをクローンする
    ```
@@ -15,7 +20,6 @@
    ```
 2. ターミナルを開き、以下のコマンドを入力
    ```
-   $ 
    $ docker compose build && docker compose up -d
    ```
 3. ブラウザで http://localhost:8080/ にアクセスすると以下のような画面が表示される
@@ -28,15 +32,18 @@
 <img src="fig/terminal.png" width="400">
 </center>
 
-5. ターミナル上で以下のコマンドを実行し、サンプルプログラムをビルドし、templete.gbaを生成する。
+5. ブラウザ上のターミナル上で以下のコマンドを実行し、サンプルプログラムをビルドし、templete.gbaを生成する。
    
 ```
-$ cd /home/ubuntu/gba-examples/templete$ make
+$ cd /home/ubuntu/gba-examples/templete
+$ make
 ```
-6.  エミュレータで実行する。
+6.  ブラウザ上のターミナル上で以下のコマンドを実行し、エミュレータで実行する。
   ```
   $ vba --throttle=100 --filter-super-eagle template.gba
   ``` 
 <center>
 <img src="fig/helloworld.png" width="400">
 </center>
+
+
