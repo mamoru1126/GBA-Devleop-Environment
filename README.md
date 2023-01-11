@@ -11,7 +11,7 @@
 ## Tutorial ##
 1. リポジトリをクローンする
    ```
-    $ git clone 
+    $ git clone https://github.com/mamoru1126/GBA_Devleop_Enviroment.git
    ```
 2. ターミナルを開き、以下のコマンドを入力
    ```
