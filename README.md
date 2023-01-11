@@ -4,6 +4,7 @@
 - 使用しているライブラリは devkitpro である
   - https://github.com/devkitPro
 - GBAのエミュレータは VisualBoyAdvance である
+  - https://wiki.ubuntuusers.de/VisualBoyAdvance/
 
 ## Tutorial ##
 1. リポジトリをクローンする
