@@ -9,7 +9,7 @@
   - https://github.com/devkitPro/gba-examples
 
 開発者が使用しているPCのOSはUbuntu 20.04であるが、</br> 
-Windows の場合でも Docker desktop for Windows で Dockerをインストールすれば </br>
+Windows の場合でも Docker desktop for Windows をインストールすれば </br>
 GBA開発環境を構築することができる  
 
 
