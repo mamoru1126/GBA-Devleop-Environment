@@ -34,7 +34,7 @@ https://code.visualstudio.com/docs/devcontainers/containers
   git clone https://github.com/mamoru1126/GBA-Devleop-Environment.git
   ```
 
-4. Open in Visual Stduio Code
+4. Open GBA-Devleop-Environment in Visual Stduio Code
 
 5. Ctrl + shift + p and Rebuild and Reopen in Container
 <div align="center">
