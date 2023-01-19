@@ -31,7 +31,7 @@ https://code.visualstudio.com/docs/devcontainers/containers
 
 3. Clone this repository
   ```
-  git clone https://github.com/mamoru1126/GBA_Devleop_Environment.git
+  git clone https://github.com/mamoru1126/GBA-Devleop-Environment.git
   ```
 
 4. Open in Visual Stduio Code
