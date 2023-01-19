@@ -1,5 +1,5 @@
 {
-    "name": "C++ development environment",
+    "name": "GBA Development Environment",
 
     "dockerFile": "Dockerfile", 
     
