@@ -70,6 +70,7 @@ https://code.visualstudio.com/docs/devcontainers/containers
 --- 
 
 ## Setting GBA File Path ##
+Line 61 of index.html specifies the location of the gba file
 <div align="center">
 <img src="fig/path.png" title="path" width="500">
 </div>
