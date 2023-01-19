@@ -1,4 +1,4 @@
-FROM dorowu/ubuntu-desktop-lxde-vnc
+FROM devkitpro/devkitarm
 ENV DEBIAN_FRONTEND=noninteractive
 
 ARG USERNAME=ubuntu
@@ -8,9 +8,6 @@ ARG USER_GID=$USER_UID
 ENV HOME /home/ubuntu
 
 SHELL ["/bin/bash", "-l", "-c"]
-
-RUN apt-get install -y wget
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 
 # # Create the user
 RUN groupadd --gid $USER_GID $USERNAME \
@@ -38,24 +35,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
             lcov \
             locales-all \ 
             gdb \
-            visualboyadvance \
-            vbaexpress \ 
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/*
 
-ENV TZ=Asia/Tokyo
-RUN apt update && \
-  apt install -yq wget curl libarchive13 xz-utils make gpg pkg-config && \
-  wget https://wii.leseratte10.de/devkitPro/pacman/devkitpro-pacman-1.0.2.amd64.deb && \
-  dpkg -i devkitpro-pacman-1.0.2.amd64.deb && \
-  rm /etc/mtab && \
-  ln -s /proc/self/mounts /etc/mtab && \
-  all | dkp-pacman --noconfirm -S gba-dev 
 
 ENV DEVKITARM=/opt/devkitpro/devkitARM
 ENV DEVKITPRO=/opt/devkitpro
 ENV DEVKITPPC=/opt/devkitpro/devkitPPC
 ENV PATH="${DEVKITPRO}/tools/bin:${PATH}"
-
-WORKDIR ${HOME}
-RUN git clone https://github.com/devkitPro/gba-examples

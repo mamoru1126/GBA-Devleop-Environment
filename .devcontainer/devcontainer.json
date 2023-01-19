@@ -1,0 +1,33 @@
+{
+    "name": "C++ development environment",
+
+    "dockerFile": "Dockerfile", 
+    
+    "workspaceFolder": "/home/ubuntu/workspace",
+
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+    },
+
+    "mounts": [
+        "source=${localWorkspaceFolder}/dev,target=/home/ubuntu/workspace,type=bind"
+    ],
+
+    "postCreateCommand": "/bin/bash",
+
+	"remoteUser": "ubuntu",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-python.python",
+                "twxs.cmake",
+                "astallinger.sourcetrail",
+                "ritwickdey.LiveServer",
+                "DavidSchuldenfrei.gtest-adapter",
+                "matepek.vscode-catch2-test-adapter",
+                "uctakeoff.vscode-counter"
+			]
+		}
+	}
+}
