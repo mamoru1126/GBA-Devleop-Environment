@@ -13,7 +13,7 @@ https://hub.docker.com/r/devkitpro/devkitarm
 - sample code</br>
 https://github.com/devkitPro/gba-examples
 
-- Visual Studio Code 's devcontainer
+- Visual Studio Code 's devcontainer</br>
 https://code.visualstudio.com/docs/devcontainers/containers
 
 ---
