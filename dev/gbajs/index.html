@@ -58,7 +58,7 @@ window.onload = function() {
 			gba.setBios(bios);
 		});
 
-		loadRom('template.gba', function(game) {
+		loadRom('../gba-examples/template/template.gba', function(game) {
 			gba.setRom(game);
 			for (var i = 0; i < runCommands.length; ++i) {
 				runCommands[i]();
