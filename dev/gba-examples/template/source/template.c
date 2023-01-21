@@ -4,30 +4,42 @@
 #include <gba_interrupt.h>
 #include <gba_systemcalls.h>
 #include <gba_input.h>
+#include "gbaimg.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-//---------------------------------------------------------------------------------
-// Program entry point
-//---------------------------------------------------------------------------------
-int main(void) {
-//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+void WaitForVsync(void)
+{
+	while(*(vu16*)0x4000006 >= 160) {};
+	while(*(vu16*)0x4000006 <  160) {};
+}
+//---------------------------------------------------------------------------
+void Mode3DrawImage(u16* img)
+{
+	u16* ScreenBuffer = (u16*)0x6000000;
+	u32  x, y;
 
+	for(y=0; y<160; y++)
+	{
+		for(x=0; x<240; x++)
+		{
+			ScreenBuffer[y*240+x] = img[y*240+x];
+		}
+	}
+}
+//---------------------------------------------------------------------------
+int main(void)
+{
+	// モード設定
+	SetMode(MODE_3 | BG2_ENABLE);
 
-	// the vblank interrupt must be enabled for VBlankIntrWait() to work
-	// since the default dispatcher handles the bios flags no vblank handler
-	// is required
-	irqInit();
-	irqEnable(IRQ_VBLANK);
+	// 画像の読み込み
+	Mode3DrawImage((u16*)&gbaimgBitmap);
 
-	consoleDemoInit();
-
-	// ansi escape sequence to set print co-ordinates
-	// /x1b[line;columnH
-	iprintf("\x1b[10;10HHello World!\n");
-
-	while (1) {
-		VBlankIntrWait();
+	for(;;)
+	{
+	    WaitForVsync();
 	}
 }
 

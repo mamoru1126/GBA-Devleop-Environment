@@ -1,0 +1,11 @@
+#file type
+-fts
+
+#All data type
+-U16
+
+#tile format
+-gt
+
+#4 bit bitmap
+-gB4
